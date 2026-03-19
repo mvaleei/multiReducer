@@ -1,0 +1,11 @@
+<div style="background-color: aqua;">
+    <h2>Componente per visualizzare la lista dei nomi nello state</h2>
+    <h3>Numero di persone nello state: {{listaNomi.length}}</h3>
+    <table>
+        @for (nome of listaNomi; track $index) {
+        <tr>
+            <td><label for="">{{nome.nome}}</label></td>
+        </tr>
+        }
+    </table>
+</div>

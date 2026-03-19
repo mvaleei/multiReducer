@@ -1,5 +1,7 @@
 import { IPersona } from '../Model/Ipersona'
 
+import { createSelector } from '@ngrx/store'
+
 //oggetto che andra nello state
 export interface PersonaState {
     Anagrafica: Array<IPersona>
@@ -17,8 +19,23 @@ const inizializzazione: PersonaState = {
 
 //creiamo i lreducer
 export function personaReducer(
-    personaState: PersonaState = inizializzazione
+    personaState: PersonaState = inizializzazione,
+    action: any
 ) {
-    
+
+    console.log(personaState)
+    switch (action.type) {
+
+        default:
+            return personaState
+    }
 
 }
+
+const selectPersonaState = (state: any) => state.personaState
+
+//creo ed esporto il vero selettore
+export const selectPersona = createSelector(
+    selectPersonaState,
+    (state) => state.Anagrafica
+)
