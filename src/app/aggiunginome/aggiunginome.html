@@ -1,6 +1,6 @@
-<div style="background-color: darkorchid; width: 85%;">
+<div  style="background-color: darkorchid; width: 85%;">
     <h3>Componente per aggiungere un nome allo state</h3>
     <label for="">Inserisci il nuovo nome</label>
     <input type="text" [(ngModel)]="nomeInserito"> <span>{{nomeInserito}}</span>
-    <button>Aggiungi</button>
+    <button  (click)="aggiungiNome()">Aggiungi</button>
 </div>

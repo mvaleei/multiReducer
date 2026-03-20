@@ -15,9 +15,24 @@ export function contatoreReducer(
     contatoreState: ContatoreState = inizializzazione,
     action: any
 ) {
-    console.log(contatoreState)
+    //console.log(contatoreState)
 
     switch (action.type) {
+
+        case "INCREMENTA":
+            let nuovoValore: Contatore = new Contatore(contatoreState.contatore.counter + 1);
+            let nuovoStato: ContatoreState = {
+                contatore: nuovoValore
+            }
+            return nuovoStato;
+
+        case "DECREMENTA":
+            let nuovoValore1: Contatore = new Contatore(contatoreState.contatore.counter - 1);
+            let nuovoStato1: ContatoreState = {
+                contatore: nuovoValore1
+            }
+            return nuovoStato1;
+
 
         default:
             return contatoreState

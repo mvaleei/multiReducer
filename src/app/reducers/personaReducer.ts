@@ -25,6 +25,17 @@ export function personaReducer(
 
     console.log(personaState)
     switch (action.type) {
+        case "AGGIUNGI":
+            //dichiarare un nuovo stato, dello stesso tipo del reducer
+            //aggiugere il nuovo nome
+            let nuovoStato: PersonaState = {
+                Anagrafica: [...personaState.Anagrafica]
+            }
+
+            nuovoStato.Anagrafica.push(
+                { nome: action.nuovoNome }
+            )
+            return nuovoStato;
 
         default:
             return personaState
@@ -39,3 +50,11 @@ export const selectPersona = createSelector(
     selectPersonaState,
     (state) => state.Anagrafica
 )
+
+
+/*
+      {
+        type: "AGGIUNGI",
+        nuovoNome: this.nomeInserito
+      }
+*/
